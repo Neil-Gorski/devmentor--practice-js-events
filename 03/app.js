@@ -1,10 +1,9 @@
 const btns = document.querySelectorAll("button");
 
 const clickBtn = function (e) {
-  if (this.innerText !== "clicked") {
-    this.innerText = "clicked";
-    console.log("clicked");
-  }
+  this.innerText = "clicked";
+  console.log("clicked");
+  this.removeEventListener("click", clickBtn);
 };
 
 for (btn of btns) {
